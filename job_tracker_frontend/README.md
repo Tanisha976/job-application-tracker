@@ -21,9 +21,9 @@ https://storied-heliotrope-bc8014.netlify.app
 - JWT token stored in memory and attached to every authenticated request
 
 ## Project Structure
-job_tracker_frontend/
-├── index.html    Page structure — login/register form, dashboard
-├── app.js        All API calls (fetch) and DOM logic
+job_tracker_frontend/<br>
+├── index.html    Page structure — login/register form, dashboard<br>
+├── app.js        All API calls (fetch) and DOM logic<br>
 └── style.css     Custom styling
 
 ## Setup — Run Locally

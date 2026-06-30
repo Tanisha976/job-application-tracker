@@ -18,16 +18,16 @@ A REST API built with Flask and SQLite for the Job Application Tracker.
 
 ## Project Structure
 job_tracker_backend/
-├── app.py               Flask app entry point, blueprint registration
-├── config.py            Loads environment variables
-├── db.py                Database connection and table creation
-├── models/
-│   ├── user.py
+├── app.py               Flask app entry point, blueprint registration<br>
+├── config.py            Loads environment variables<br>
+├── db.py                Database connection and table creation<br>
+├── models/<br>
+│   ├── user.py<br>
 │   └── application.py
-├── routes/
-│   ├── auth.py           /register, /login
-│   └── applications.py   CRUD + filter routes for applications
-├── requirements.txt
+├── routes/<br>
+│   ├── auth.py           /register, /login<br>
+│   └── applications.py   CRUD + filter routes for applications<br>
+├── requirements.txt<br>
 └── Procfile              Start command for deployment
 
 ## API Endpoints

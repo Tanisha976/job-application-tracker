@@ -12,9 +12,9 @@ Note: Backend is hosted on Render's free tier, so the first request after a peri
 
 ## Project Structure
 
-This is a monorepo containing two independently deployable parts:
-    job-application-tracker/
-    ├── job_tracker_backend/    Flask REST API (see its own README)
+This is a monorepo containing two independently deployable parts:<br>
+    job-application-tracker/<br>
+    ├── job_tracker_backend/    Flask REST API (see its own README)<br>
     └── job_tracker_frontend/   HTML/CSS/JS client (see its own README)
 
 ## Features
