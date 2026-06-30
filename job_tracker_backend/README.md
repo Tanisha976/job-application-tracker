@@ -23,7 +23,7 @@ job_tracker_backend/
 ├── db.py                Database connection and table creation<br>
 ├── models/<br>
 │   ├── user.py<br>
-│   └── application.py
+│   └── application.py<br>
 ├── routes/<br>
 │   ├── auth.py           /register, /login<br>
 │   └── applications.py   CRUD + filter routes for applications<br>
