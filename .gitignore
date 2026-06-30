@@ -1,6 +1,6 @@
-backend/venv/
-backend/.env
-backend/__pycache__/
-backend/*.pyc
-backend/*.db
-frontend/*.csv
+job_tracker_backend/venv/
+job_tracker_backend/.env
+job_tracker_backend/__pycache__/
+job_tracker_backend/*.pyc
+job_tracker_backend/*.db
+job_tracker_frontend/*.csv
