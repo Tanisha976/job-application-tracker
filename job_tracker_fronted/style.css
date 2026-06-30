@@ -1,0 +1,260 @@
+:root {
+    --bg: #1a1d29;
+    --panel: #232738;
+    --panel-border: #323750;
+    --text: #e4e6ed;
+    --text-dim: #8b8fa3;
+    --accent: #ff9f43;
+    --accent-dim: #cc7f35;
+    --applied: #5b7fd6;
+    --interview: #ff9f43;
+    --rejected: #d65b5b;
+    --selected: #4fb87c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    line-height: 1.5;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    display: inline-block;
+    border-radius: 1px;
+}
+
+h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin: 32px 0 12px;
+    font-weight: 500;
+}
+
+/* Login card */
+#login-section {
+    max-width: 360px;
+    margin: 80px auto 0;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    padding: 32px;
+}
+
+#login-section h2::before { display: none; }
+#login-section h2 { text-align: center; justify-content: center; }
+
+input, select {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 11px 12px;
+    background: var(--bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+input::placeholder { color: var(--text-dim); }
+
+button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 11px 18px;
+    background: var(--accent);
+    color: #1a1d29;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover { background: #ffb366; }
+button:active { transform: scale(0.97); }
+
+#login-section button { width: 100%; margin-top: 4px; }
+
+.error {
+    color: var(--rejected);
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 10px;
+}
+
+/* Dashboard */
+#dashboard { display: none; }
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.topbar button {
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    color: var(--text-dim);
+}
+.topbar button:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
+
+.add-form {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 8px;
+}
+
+.add-form input { margin-bottom: 10px; }
+.add-form input:last-of-type { margin-bottom: 14px; }
+
+/* Table as tracking board */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
+thead th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--panel-border);
+    font-weight: 500;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--panel-border);
+    transition: background 0.1s ease;
+}
+
+tbody tr:hover { background: var(--panel); }
+
+td { padding: 12px; vertical-align: middle; }
+
+td:first-child { font-weight: 500; color: var(--text); font-family: 'Space Grotesk', sans-serif; }
+
+/* Status badge — stamped look, not soft pill */
+.status {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+}
+
+.status-applied   { color: var(--applied); }
+.status-interview { color: var(--interview); }
+.status-rejected  { color: var(--rejected); }
+.status-selected  { color: var(--selected); }
+
+.actions { display: flex; gap: 6px; }
+
+.actions button {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    color: var(--text-dim);
+}
+
+.actions button:hover { background: transparent; border-color: var(--accent); color: var(--accent); }
+
+.actions button.danger:hover { border-color: var(--rejected); color: var(--rejected); }
+
+@media (max-width: 600px) {
+    body { padding: 24px 16px 60px; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tbody tr { padding: 12px 0; }
+    td { padding: 4px 0; border: none; }
+    td:first-child::before { content: "Company  "; color: var(--text-dim); font-size: 0.7rem; }
+}
+
+.toggle-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 16px;
+}
+
+.toggle-text a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.toggle-text a:hover { text-decoration: underline; }
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+}
+
+.app-logo {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.app-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    color: var(--text);
+}
+
+.tagline {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin: -12px 0 20px;
+}

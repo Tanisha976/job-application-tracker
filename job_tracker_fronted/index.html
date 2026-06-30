@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <span class="app-logo">◆</span>
+        <span class="app-name">TRACE</span>
+    </header>
+    <div id="login-section">
+        <h2 id="auth-title">Login</h2>
+        <p class="tagline">Track every application, one stage at a time.</p>
+
+        <div id="register-fields" style="display:none;">
+            <input type="text" id="reg-name" placeholder="Full Name">
+        </div>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <button id="auth-submit-btn" onclick="login()">Login</button>
+        <p id="login-error" class="error"></p>
+
+        <p class="toggle-text">
+            <span id="toggle-text">Don't have an account?</span>
+            <a href="#" id="toggle-link" onclick="toggleAuthMode(event)">Register</a>
+        </p>
+    </div>
+    <div id="dashboard">
+        <div class="topbar">
+            <h2>Your Applications</h2>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+
+        <h3>Add Applications</h3>
+        <div class="add-form">
+            <input type="text" id="company" placeholder="Company">
+            <input type="text" id="role" placeholder="Role">
+            <input type="text" id="notes" placeholder="Notes">
+            <button onclick="addApplication()">Add</button>
+        </div>
+
+        <table id="applications-table">
+            <thead>
+                <tr>
+                    <th>Comapny</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applications-body"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
